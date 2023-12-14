@@ -41,10 +41,8 @@ button {
   margin: 0 auto;
 }
 
-
 /*===================== Mobile styles =====================*/
 /*===================== Header =====================*/
-
 
 .navigation-menu,
 .address-info {
@@ -86,9 +84,12 @@ button {
   color: #2e2f42;
 }
 
-
 /* Mobile modal menu */
 
+.mobile-menu-container {
+  display: flex;
+  flex-direction: column;
+}
 
 .mobile-menu-open-btn {
   border: none;
@@ -98,7 +99,7 @@ button {
   line-height: 0;
 }
 
-.mobile-manu-wrapper {
+.mobile-menu-wrapper {
   position: fixed;
   z-index: 999;
   top: 0;
@@ -109,16 +110,19 @@ button {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  padding-top: 72px;
+  padding-bottom: 40px;
+  padding-left: 15px;
+  display: flex;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.open-mobile-menu {
+
+.mobile-menu-wrapper.open-mobile-menu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-}
-
-.mobile-menu-container {
-  position: relative;
 }
 
 .mobile-close-btn {
@@ -141,15 +145,13 @@ button {
 
 .mobile-navigation-menu {
   display: flex;
+  margin-bottom: auto;
 }
 
 .mobile-navigation-menu-list {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 40px;
-  margin-top: 72px;
-  margin-bottom: 168px;
 }
 
 .mobile-navigation-menu-list .link {
@@ -168,10 +170,14 @@ button {
 }
 
 .mobile-address-item {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
   gap: 24px;
+}
+
+.accent-color-studio {
+  color: #404bbf;
 }
 
 .mobile-link-address {
@@ -185,6 +191,10 @@ button {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.accent-color-number {
+  color: #4d5ae5;
+}
+
 .mobile-link-address:focus,
 .mobile-link-address:hover {
   color: #4d5ae5;
@@ -192,12 +202,12 @@ button {
 
 .mobile-social-list {
   display: flex;
-  gap: 40px;
-  margin-bottom: 40px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
 }
 
 .mobile-social-list-item {
-  display: flex;
   width: 40px;
   height: 40px;
 }
@@ -224,10 +234,8 @@ button {
   background-color: #404bbf;
 }
 
-
 /*===================== Main =====================*/
 /* Section 1 */
-
 
 .main-title {
   color: #fff;
@@ -257,7 +265,7 @@ button {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(/images/mobile-background-office.jpg);
+    url(../images/mobile-background-office.jpg);
 }
 
 @media screen and (min-resolution: 192dpi) and (min-width: 320px),
@@ -297,9 +305,7 @@ button {
   background-color: #404bbf;
 }
 
-
 /* Section 2 */
-
 
 .visually-hidden {
   position: absolute;
@@ -355,9 +361,7 @@ button {
   flex-direction: column;
 }
 
-
 /* Section 3 */
-
 
 .team {
   background: #f4f4fd;
@@ -456,9 +460,7 @@ button {
   background-color: #404bbf;
 }
 
-
 /* Section 4 */
-
 
 .project-content {
   padding-top: 96px;
@@ -551,9 +553,7 @@ button {
   transform: translateY(0%);
 }
 
-
 /*===================== Footer =====================*/
-
 
 .footer-page {
   background: #2e2f42;
@@ -619,7 +619,6 @@ button {
 .footer-social-list {
   display: flex;
   gap: 16px;
-  margin-bottom: 72px;
 }
 
 .footer-social-list-link {
@@ -711,9 +710,7 @@ button {
   margin-left: 16px;
 }
 
-
 /*===================== Modal =====================*/
-
 
 .backdrop {
   top: 0;
@@ -962,13 +959,11 @@ button {
   background-color: #404bbf;
 }
 
-
 /*===================== Tablet styles =====================*/
-
 
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 736px;
+    max-width: 768px;
   }
 
   .mobile-manu-wrapper {
@@ -1081,18 +1076,18 @@ button {
     color: #404bbf;
   }
 
-
   /* Section 1 */
-
 
   .saction-solutions {
     max-width: 768px;
+    padding-top: 112px;
+    padding-bottom: 112px;
     background-image: linear-gradient(
         to bottom,
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(/images/tablet-background-office.jpg);
+      url(../images/tablet-background-office.jpg);
   }
 
   @media screen and (min-resolution: 192dpi) and (min-width: 768px),
@@ -1115,9 +1110,7 @@ button {
     padding-bottom: 48px;
   }
 
-
   /* Section 2 */
-
 
   .item-preference {
     flex-direction: row;
@@ -1134,9 +1127,7 @@ button {
     width: calc((100% - 24px) / 2);
   }
 
-
   /* Section 3 */
-
 
   .item-team {
     flex-direction: row;
@@ -1146,9 +1137,7 @@ button {
     justify-content: center;
   }
 
-
   /* Section 4 */
-
 
   .project-info {
     flex-direction: row;
@@ -1165,9 +1154,7 @@ button {
     width: calc((100% - 24px) / 2);
   }
 
-
   /* Footer */
-
 
   .footer-content {
     justify-content: flex-start;
@@ -1195,9 +1182,7 @@ button {
     width: 264px;
   }
 
-
   /* Modal */
-
 
   .modal {
     width: 408px;
@@ -1209,9 +1194,7 @@ button {
   }
 }
 
-
 /*===================== Desktop styles =====================*/
-
 
 @media screen and (min-width: 1158px) {
   .container {
@@ -1227,9 +1210,11 @@ button {
     gap: 40px;
   }
 
+  .address-info .link-address {
+    font-size: 16px;
+  }
 
   /* Section 1 */
-
 
   .saction-solutions {
     max-width: 1440px;
@@ -1238,7 +1223,7 @@ button {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(/images/background-office.jpg);
+      url(../images/background-office.jpg);
   }
 
   @media screen and (min-resolution: 192dpi) and (min-width: 1168px),
@@ -1253,9 +1238,7 @@ button {
     }
   }
 
-
   /* Section 2 */
-
 
   .preference-section {
     padding-top: 120px;
@@ -1293,9 +1276,7 @@ button {
     width: calc((100% - 72px) / 4);
   }
 
-
   /* Section 3 */
-
 
   .team {
     height: 732px;
@@ -1307,9 +1288,7 @@ button {
     width: calc((100% - 72px) / 4);
   }
 
-
   /* Section 4 */
-
 
   .project-content {
     padding-top: 120px;
@@ -1330,17 +1309,11 @@ button {
     width: calc((100% - 48px) / 3);
   }
 
-
   /* Footer */
-
 
   .footer-page {
     padding-top: 100px;
     padding-bottom: 100px;
-  }
-
-  .info-footer {
-    margin-bottom: 16px;
   }
 
   .footer-info-logo {
